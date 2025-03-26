@@ -44,11 +44,14 @@
   /* Header / App bar */
   h1 {
     text-align: center;
+    font-family: 'Segoe UI', sans-serif;  /* Change to any font you like */
+    font-weight: 700;                     /* 400 = normal, 700 = bold */
+    font-size: 24px;
     background-color: #015dce;
+    background: linear-gradient(155deg, #5c2bee, #7433ff, #FFA3FD);
     color: white;
-    padding: 32px;
-    padding-top: 48px;
-    font-size: 18px;
+    padding: 24px;
+    padding-top: 40px;
     z-index: 1;
   }
   
@@ -75,7 +78,7 @@
   
   .user {
     align-self: flex-end;
-    background-color: #b4d4ee;
+    background-color: #cdcaff;
     border-bottom-right-radius: 0;
   }
   
@@ -107,7 +110,7 @@
     margin-left: 10px;
     padding: 10px 16px;
     font-size: 14px;
-    background-color: #015dce;
+    background-color: #7433ff;
     color: white;
     border: none;
     border-radius: 20px;
@@ -115,6 +118,6 @@
   }
   
   #send-button:hover {
-    background-color: #005bb5;
+    background-color: #6e27e1;
   }
   
