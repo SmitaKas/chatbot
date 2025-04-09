@@ -1,123 +1,161 @@
 /* Reset default margins and box sizing */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    height: 100vh;
-    width: 100vw;
-    background-color: #cfd8dc; /* subtle outer grey */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  /* Phone mockup container */
-  .phone-frame {
-    width: 390px;
-    height: 844px;
-    background-color: #ffffff;
-    border-radius: 40px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  
-  /* Optional top notch */
-  .phone-notch {
-    width: 210px;
-    height: 30px;
-    background: #333;
-    border-radius: 0 0 20px 20px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-  
-  /* Header / App bar */
-  h1 {
-    text-align: center;
-    font-family: 'Segoe UI', sans-serif;  /* Change to any font you like */
-    font-weight: 700;                     /* 400 = normal, 700 = bold */
-    font-size: 24px;
-    background-color: #015dce;
-    background: linear-gradient(155deg, #5c2bee, #7433ff, #FFA3FD);
-    color: white;
-    padding: 24px;
-    padding-top: 40px;
-    z-index: 1;
-  }
-  
-  /* Chat window area */
-  #chat-window {
-    flex: 1;
-    padding: 16px;
-    background-color: #f5f5f5;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Message bubbles */
-  .message {
-    max-width: 75%;
-    padding: 10px 14px;
-    margin: 8px 0;
-    border-radius: 18px;
-    font-size: 15px;
-    line-height: 1.4;
-    word-wrap: break-word;
-  }
-  
-  .user {
-    align-self: flex-end;
-    background-color: #cdcaff;
-    border-bottom-right-radius: 0;
-  }
-  
-  .bot {
-    align-self: flex-start;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-bottom-left-radius: 0;
-  }
-  
-  /* Fixed input at the bottom */
-  .input-area {
-    display: flex;
-    padding: 14px;
-    background-color: #ffffff;
-    border-top: 1px solid #ccc;
-  }
-  
-  #user-input {
-    flex: 1;
-    padding: 10px 14px;
-    font-size: 14px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  #send-button {
-    margin-left: 10px;
-    padding: 10px 16px;
-    font-size: 14px;
-    background-color: #7433ff;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  #send-button:hover {
-    background-color: #6e27e1;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #cfd8dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Phone mockup container */
+.phone-frame {
+  width: 390px;
+  height: 844px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Optional top notch */
+.phone-notch {
+  width: 210px;
+  height: 30px;
+  background: #333;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Header / App bar */
+h1 {
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  background: linear-gradient(155deg, #5c2bee, #7433ff, #FFA3FD);
+  color: white;
+  padding: 24px;
+  padding-top: 40px;
+  z-index: 1;
+}
+
+/* Chat window area */
+#chat-window {
+  flex: 1;
+  padding: 16px;
+  background-color: #f5f5f5;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message container */
+.message-container {
+  display: flex;
+  align-items: flex-end;
+  margin: 8px 0;
+}
+
+/* Message bubbles */
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* User and Bot Bubbles */
+.user {
+  background-color: #cdcaff;
+  border-bottom-right-radius: 0;
+  align-self: flex-end;
+}
+
+.bot {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 0;
+  align-self: flex-start;
+}
+
+/* Avatars */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+/* Avatar positioning */
+.user-container {
+  justify-content: flex-end;
+}
+
+.user-container .avatar {
+  order: 2;
+}
+
+.user-container .message {
+  order: 1;
+}
+
+.bot-container {
+  justify-content: flex-start;
+}
+
+.bot-container .avatar {
+  order: 1;
+}
+
+.bot-container .message {
+  order: 2;
+}
+
+/* Fixed input at the bottom */
+.input-area {
+  display: flex;
+  padding: 14px;
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+#send-button {
+  margin-left: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: #7433ff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #6e27e1;
+}
