@@ -16,5 +16,4 @@ A friendly, responsive AI-powered chatbot built using **Flask**, **HTML**, **CSS
 
 ---
 
-## 📁 Folder Structure
 
